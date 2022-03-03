@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Movies.API.Data;
+using IdentityServer4.Models;
+using IdentityServer4.Test;
 
 namespace Movies.API
 {
@@ -37,6 +39,9 @@ namespace Movies.API
 
             services.AddDbContext<MoviesAPIContext>(options =>
                     options.UseInMemoryDatabase("Movies"));
+
+            
+                
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +58,7 @@ namespace Movies.API
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthorization();            
 
             app.UseEndpoints(endpoints =>
             {
