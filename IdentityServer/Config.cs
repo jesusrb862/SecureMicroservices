@@ -11,7 +11,7 @@ namespace IdentityServer
             {
                 new Client
                 {
-                     ClientId ="movieclient",
+                     ClientId ="movieClient",
                      AllowedGrantTypes = GrantTypes.ClientCredentials,
                      ClientSecrets={
                         new Secret("secret".Sha256())
