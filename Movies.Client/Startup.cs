@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 
 using Movies.Client.ApiServices;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 namespace Movies.Client
 {
@@ -29,6 +31,12 @@ namespace Movies.Client
             services.AddControllersWithViews();
 
             services.AddScoped<IMovieApiService, MovieApiService>();
+
+            services.AddAuthentication(options => {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            })
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

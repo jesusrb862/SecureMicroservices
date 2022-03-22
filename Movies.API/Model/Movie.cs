@@ -14,4 +14,13 @@ namespace Movies.API.Model
         public string Rating { get; set; }
         public string ImageUrl { get; set; }
     }
+    //public class Movie
+    //{
+    //    public int Id { get; set; }
+    //    public string Description { get; set; }
+    //    public string Genre { get; set; }
+    //    public DateTime ReleaseDate { get; set; }
+
+    //    public bool Oscar { get; set; }      
+    //}
 }

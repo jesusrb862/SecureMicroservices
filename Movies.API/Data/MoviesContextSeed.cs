@@ -7,9 +7,8 @@ namespace Movies.API.Data
 {
     public class MoviesContextSeed
     {
-
-        public static void SeedAsync(MoviesAPIContext moviesContext) {
-            
+        public static void SeedAsync(MoviesAPIContext moviesContext)
+        {
             if (!moviesContext.Movie.Any())
             {
                 var movies = new List<Movie>
@@ -99,5 +98,43 @@ namespace Movies.API.Data
                 moviesContext.SaveChanges();
             }
         }
+        //public static void SeedAsync(MoviesAPIContext moviesContext)
+        //{
+        //    if (!moviesContext.Movie.Any())
+        //    {
+        //        var movies = new List<Movie>
+        //            {
+        //                new Movie
+        //                {
+        //                    Id = 1,
+        //                    Genre = "Action",
+        //                    Description = "Star wars",
+        //                    ReleaseDate = new DateTime(1977, 12, 25),
+        //                    Oscar = false
+        //                },
+        //                new Movie
+        //                {
+        //                    Id = 2,
+        //                    Genre = "Drama",
+        //                    Description = "Titanic",
+
+        //                    ReleaseDate = new DateTime(1997, 1, 3),
+        //                    Oscar=true
+        //                },
+        //                new Movie
+        //                {
+        //                    Id = 3,
+        //                    Genre = "Action",
+        //                    Description = "Batman",
+        //                    ReleaseDate = new DateTime(1989, 11, 29),
+        //                    Oscar=false
+        //                }
+        //            };
+        //        moviesContext.Movie.AddRange(movies);
+        //        moviesContext.SaveChanges();
+        //    }
+        //}
     }
 }
+    
+
