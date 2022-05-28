@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServerHost.Quickstart.UI;
 
 namespace IdentityServer
 {
@@ -31,7 +32,7 @@ namespace IdentityServer
                 .AddInMemoryClients(Config.Clients)                
                 .AddInMemoryApiScopes(Config.ApiScopes)   
                 .AddInMemoryIdentityResources(Config.IdentityResources)
-                .AddTestUsers(Config.TestUser)
+                .AddTestUsers(TestUsers.Users)
                 .AddDeveloperSigningCredential();                 
             services.AddRazorPages();
         }

@@ -16,7 +16,9 @@ using Movies.API.Data;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 using Microsoft.IdentityModel.Tokens;
-
+using Microsoft.Net.Http.Headers;
+using IdentityModel.Client;
+using System.Net.Http;
 namespace Movies.API
 {
     public class Startup
@@ -49,7 +51,10 @@ namespace Movies.API
                     ValidateAudience = false
                 };
              });
-                
+
+            //services.AddAuthorization(options =>
+            //options.AddPolicy("ClientPolicy", policy => policy.RequireClaim("client_id", "movieClient", "movie_mvc_client")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

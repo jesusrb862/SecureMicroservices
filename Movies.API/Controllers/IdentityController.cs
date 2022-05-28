@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+
 namespace Movies.API.Controllers
 {   
     [Route("api/[controller]")]
@@ -7,9 +9,11 @@ namespace Movies.API.Controllers
     [Authorize]
     public class IdentityController : ControllerBase
     {
+        [HttpGet]
         public IActionResult Get()
         {
-            return Ok();
+            var result = from c in User.Claims select new { c.Type, c.Value };
+            return Ok(result);
         }
     }
 }
