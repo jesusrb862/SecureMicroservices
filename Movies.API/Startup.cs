@@ -52,8 +52,8 @@ namespace Movies.API
                 };
              });
 
-            //services.AddAuthorization(options =>
-            //options.AddPolicy("ClientPolicy", policy => policy.RequireClaim("client_id", "movieClient", "movie_mvc_client")));
+            services.AddAuthorization(options =>
+            options.AddPolicy("ClientPolicy", policy => policy.RequireClaim("client_id", "movieClient", "movie_mvc_client")));
 
         }
 
