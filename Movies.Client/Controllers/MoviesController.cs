@@ -33,6 +33,13 @@ namespace Movies.Client.Controllers
             return View(await movieApiService.GetMovies());
             //return View(await _context.Movie.ToListAsync());
         }
+
+        [Authorize(Roles ="admin")]
+        public async Task<IActionResult> OnlyAdmin()
+        {
+            var userInfo =await movieApiService.GetUserInfo();
+            return View(userInfo);
+        }
         private async Task LogTokenAndClaims()
         {
             var identityToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);

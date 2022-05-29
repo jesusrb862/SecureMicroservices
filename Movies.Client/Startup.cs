@@ -16,6 +16,9 @@ using System.Net.Http;
 using Movies.API.HttpHandlers;
 using IdentityModel.Client;
 using Microsoft.Net.Http.Headers;
+using Microsoft.IdentityModel.Tokens;
+using IdentityModel;
+
 namespace Movies.Client
 {
     public class Startup
@@ -46,14 +49,22 @@ namespace Movies.Client
                  options.ClientId = "movie_mvc_client";
                  options.ClientSecret = "secret";
                  options.ResponseType = "code id_token";
-                 options.Scope.Add("openid");
-                 options.Scope.Add("profile");
-                 //options.Scope.Add("address");
-                 //options.Scope.Add("email");
+                 //options.Scope.Add("openid");
+                 //options.Scope.Add("profile");
+                 options.Scope.Add("address");
+                 options.Scope.Add("email");
                  options.Scope.Add("movieAPI");
-                 options.SaveTokens = true;
+                 options.Scope.Add("roles");
 
+                 options.ClaimActions.MapUniqueJsonKey("role", "role");
+
+                 options.SaveTokens = true;
                  options.GetClaimsFromUserInfoEndpoint = true;
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     NameClaimType = JwtClaimTypes.GivenName,
+                     RoleClaimType = JwtClaimTypes.Role
+                 };
             });
 
             services.AddTransient<AuthenticationDelegatingHandler>();
