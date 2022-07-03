@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Client", "Movies.Client\Movies.Client.csproj", "{12A54BDA-3CCC-4C98-BB89-C3A1B2A24899}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGetway", "ApiGetway\ApiGetway.csproj", "{6FCD1D8B-9934-4D03-8341-5D5B6ED74C03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{12A54BDA-3CCC-4C98-BB89-C3A1B2A24899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12A54BDA-3CCC-4C98-BB89-C3A1B2A24899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12A54BDA-3CCC-4C98-BB89-C3A1B2A24899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FCD1D8B-9934-4D03-8341-5D5B6ED74C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FCD1D8B-9934-4D03-8341-5D5B6ED74C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FCD1D8B-9934-4D03-8341-5D5B6ED74C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FCD1D8B-9934-4D03-8341-5D5B6ED74C03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

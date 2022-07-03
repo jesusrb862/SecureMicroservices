@@ -52,6 +52,7 @@ namespace IdentityServer
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             
